@@ -13,44 +13,74 @@
         </ion-toolbar>
       </ion-header>
 
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <!-- Kontener gry, który zawsze idealnie wpisuje się w ekran, zachowując proporcje -->
+      <div class="game-viewport">
+        <!-- Tu znajduje się Twoja plansza, pionki i przyciski -->
+        <div class="game-board">
+          <img src="../assets/rozaniec2.png" />
+          <div class="current"></div>
+          <div class="current2"></div>
+          <!-- Twoja grafika planszy (100% szerokości i wysokości) -->
+          <!-- Twoje pionki pozycjonowane procentowo (%) -->
+        </div>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/vue";
+import { ref, onMounted, onUnmounted } from "vue";
 </script>
 
 <style scoped>
-#container {
-  text-align: center;
-  
+/* KONTENER-WIZJER: Dynamicznie dopasowuje się do ekranu, nie pozwalając na scroll */
+.game-viewport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vh - 56px);
+}
+
+/* PLANSZA: Zawsze przyjmuje maksymalny możliwy rozmiar,
+   ale tak, by nie wyjść poza krawędzie w pionie ani w poziomie */
+.game-board {
+  position: relative;
+
+  /* Użycie vmin sprawia, że jeśli ekran jest wąski - bazuje na szerokości.
+     Jeśli ekran jest niski (np. niski smartfon) - bazuje na wysokości. */
+  width: 90vmin;
+  height: 150vmin; /* Idealny kwadrat. Jeśli plansza to prostokąt, np. width: 90vmin; height: 60vmin; */
+
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.current {
+  background-color: turquoise;
+  width: 4vw;
+  height: 2vh;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  border-radius: 45px;
+  top: 20%;
+  left: 7%;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.current2 {
+  background-color: turquoise;
+  width: 4vw;
+  height: 2vh;
+  position: absolute;
+  border-radius: 45px;
+  top: 73%;
+  left: 47%;
 }
 </style>
