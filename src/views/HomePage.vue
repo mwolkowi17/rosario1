@@ -18,8 +18,11 @@
         <!-- Tu znajduje się Twoja plansza, pionki i przyciski -->
         <div class="game-board">
           <img src="../assets/rozaniec2.png" />
-          <div class="current"></div>
-          <div class="current2"></div>
+          <img class="paciorek1" src="../assets/paciorek1.png" />
+          <img class="paciorek1" src="../assets/paciorek2.png" />
+          <img class="paciorek1" src="../assets/paciorek3.png" />
+          <!-- <div class="current"></div>
+          <div class="current2"></div> -->
           <!-- Twoja grafika planszy (100% szerokości i wysokości) -->
           <!-- Twoje pionki pozycjonowane procentowo (%) -->
         </div>
@@ -68,6 +71,7 @@ import { ref, onMounted, onUnmounted } from "vue";
   background-color: turquoise;
   width: 4vw;
   height: 2vh;
+
   position: absolute;
   border-radius: 45px;
   top: 20%;
@@ -82,5 +86,12 @@ import { ref, onMounted, onUnmounted } from "vue";
   border-radius: 45px;
   top: 73%;
   left: 47%;
+}
+
+.paciorek1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
 }
 </style>
