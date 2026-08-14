@@ -21,6 +21,20 @@
           <img class="paciorek1" src="../assets/paciorek1.png" />
           <img class="paciorek1" src="../assets/paciorek2.png" />
           <img class="paciorek1" src="../assets/paciorek3.png" />
+          <img class="paciorek1" src="../assets/paciorek4.png" />
+          <img class="paciorek1" src="../assets/paciorek5.png" />
+          <img class="paciorek1" src="../assets/paciorek6.png" />
+          <img class="paciorek1" src="../assets/paciorek7.png" />
+          <img class="paciorek1" src="../assets/paciorek8.png" />
+          <img class="paciorek1" src="../assets/paciorek9.png" />
+          <img class="paciorek1" src="../assets/paciorek10.png" />
+          <img class="paciorek1" src="../assets/paciorek11.png" />
+          <img class="paciorek1" src="../assets/paciorek12.png" />
+          <img class="paciorek1" src="../assets/paciorek13.png" />
+          <img class="paciorek1" src="../assets/paciorek14.png" />
+          <img class="paciorek1" src="../assets/paciorek15.png" />
+          <img class="paciorek1" src="../assets/paciorek16.png" />
+
           <!-- <div class="current"></div>
           <div class="current2"></div> -->
           <!-- Twoja grafika planszy (100% szerokości i wysokości) -->
