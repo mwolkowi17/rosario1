@@ -1,8 +1,6 @@
 <template>
-  <!-- Kontener gry, który zawsze idealnie wpisuje się w ekran, zachowując proporcje -->
-  <div class="game-viewport">
-    <!-- Tu znajduje się Twoja plansza, pionki i przyciski -->
-    <div class="game-board">
+  <div id="game-container">
+    <div id="game-board">
       <img src="../assets/rozaniec2.png" />
       <img
         class="paciorek1"
@@ -103,54 +101,80 @@
 <script setup lang="ts">
 import { useRosaStore } from "@/stores/rosaStore";
 import { IonButton } from "@ionic/vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const storeRose = useRosaStore();
+
+//const board: any = document.getElementById("game-board");
+const board = ref<HTMLElement | null>(null);
+
+const BASE_WIDTH = 800;
+const BASE_HEIGHT = 1400;
+
+function resizeGame() {
+  if (!board.value) return;
+  //board.value = document.getElementById("game-board");
+  // Pobranie aktualnych wymiarów okna (ekranu telefonu)
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  // Obliczenie skali dla szerokości i wysokości
+  const scaleX = windowWidth / BASE_WIDTH;
+  const scaleY = windowHeight / BASE_HEIGHT;
+
+  // Wybór mniejszej skali, aby gra zmieściła się w całości (Letterboxing)
+  const scale: any = Math.min(scaleX, scaleY);
+  console.log(scale);
+  // Zastosowanie transformacji skalowania
+  //board.style.transform = `scale(${scale})`;
+  board.value.style.transform = `scale(${scale})`;
+}
+
+// Wywołanie przy załadowaniu i każdej zmianie rozmiaru/orientacji ekranu
+//window.addEventListener("resize", resizeGame);
+window.addEventListener("DOMContentLoaded", resizeGame);
+onMounted(() => {
+  board.value = document.getElementById("game-board");
+  resizeGame();
+  window.addEventListener("resize", resizeGame);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", resizeGame);
+});
 </script>
-<style scoped>
-/* KONTENER-WIZJER: Dynamicznie dopasowuje się do ekranu, nie pozwalając na scroll */
-.game-viewport {
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  overflow: hidden;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#game-container {
   width: 100vw;
-  height: calc(100vh - 56px);
-  overflow: hidden;
-}
-
-/* PLANSZA: Zawsze przyjmuje maksymalny możliwy rozmiar,
-   ale tak, by nie wyjść poza krawędzie w pionie ani w poziomie */
-.game-board {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-
-  /* Użycie vmin sprawia, że jeśli ekran jest wąski - bazuje na szerokości.
-     Jeśli ekran jest niski (np. niski smartfon) - bazuje na wysokości. */
-  width: 90vmin;
-  height: 150vmin; /*  Jeśli plansza to prostokąt, np. width: 90vmin; height: 60vmin; */
-
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
-.current {
-  background-color: turquoise;
-  width: 4vw;
-  height: 2vh;
-
-  position: absolute;
-  border-radius: 45px;
-  top: 20%;
-  left: 7%;
-}
-
-.current2 {
-  background-color: turquoise;
-  width: 4vw;
-  height: 2vh;
-  position: absolute;
-  border-radius: 45px;
-  top: 73%;
-  left: 47%;
+#game-board {
+  width: 800px; /* Sztywna szerokość bazowa */
+  height: 1300px; /* Sztywna wysokość bazowa */
+  background-color: #f0d9b5; /* Przykładowy kolor planszy */
+  position: relative;
+  transform-origin: center center; /* Skalowanie od środka */
+  flex-shrink: 0;
 }
 
 .paciorek1 {

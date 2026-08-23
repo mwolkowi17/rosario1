@@ -6,13 +6,15 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
+    <ion-content :fullscreen="true" :scroll-y="false">
+      <!-- <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Blank</ion-title>
         </ion-toolbar>
-      </ion-header>
-      <RoseComponent />
+      </ion-header> -->
+      <!-- <RoseComponent /> -->
+      <!-- <RoseComponent2 /> -->
+      <RoseComponent3 />
     </ion-content>
   </ion-page>
 </template>
@@ -28,11 +30,17 @@ import {
 import { ref, onMounted, onUnmounted } from "vue";
 import { useRosaStore } from "@/stores/rosaStore";
 import RoseComponent from "@/components/RoseComponent.vue";
+import RoseComponent2 from "@/components/RoseComponent2.vue";
+import RoseComponent3 from "@/components/RoseComponent3.vue";
 
 const storeRose = useRosaStore();
 </script>
 
 <style scoped>
+ion-content {
+  --overflow: hidden;
+}
+
 .full-grid {
   height: 100%;
   /* height: 92.4vh; */
