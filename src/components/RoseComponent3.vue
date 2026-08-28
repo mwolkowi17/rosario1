@@ -173,26 +173,28 @@ const BASE_HEIGHT = 1400;
 
 function resizeGame() {
   if (!board.value) return;
-  //board.value = document.getElementById("game-board");
-  // Pobranie aktualnych wymiarów okna (ekranu telefonu)
+
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
 
-  // Obliczenie skali dla szerokości i wysokości
   const scaleX = windowWidth / BASE_WIDTH;
   const scaleY = windowHeight / BASE_HEIGHT;
 
-  // Wybór mniejszej skali, aby gra zmieściła się w całości (Letterboxing)
-  const scale: any = Math.min(scaleX, scaleY);
-  console.log(scale);
-  // Zastosowanie transformacji skalowania
-  //board.style.transform = `scale(${scale})`;
-  board.value.style.transform = `scale(${scale})`;
+  const scale = Math.min(scaleX, scaleY);
+
+  // wysokość planszy po skalowaniu
+  const scaledHeight = BASE_HEIGHT * scale;
+
+  // pionowe wycentrowanie
+  const top = (windowHeight - scaledHeight) / 2;
+
+  board.value.style.transform = `translateX(-50%) scale(${scale})`;
+  board.value.style.top = `${top}px`;
 }
 
 // Wywołanie przy załadowaniu i każdej zmianie rozmiaru/orientacji ekranu
 //window.addEventListener("resize", resizeGame);
-window.addEventListener("DOMContentLoaded", resizeGame);
+// window.addEventListener("DOMContentLoaded", resizeGame);
 onMounted(() => {
   board.value = document.getElementById("game-board");
   resizeGame();
@@ -222,19 +224,22 @@ onUnmounted(() => {
 #game-container {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  overflow: hidden;
   position: relative;
 }
 
 #game-board {
-  width: 800px; /* Sztywna szerokość bazowa */
-  height: 1400px; /* Sztywna wysokość bazowa */
-  background-color: #f0d9b5; /* Przykładowy kolor planszy */
-  position: relative;
-  /* transform-origin: center center; */
+  width: 800px;
+  height: 1300px;
+  background-color: #f0d9b5;
+  position: absolute;
+
+  /* najważniejsze */
+  top: 0;
+  left: 50%;
+
   transform-origin: top center;
+
   flex-shrink: 0;
 }
 
