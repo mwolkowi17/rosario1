@@ -37,59 +37,119 @@
         v-if="storeRose.rosColection[6]"
         src="../assets/paciorek7.png"
       />
-      <img
+      <!-- <img
         class="paciorek1"
         v-if="storeRose.rosColection[7]"
         src="../assets/paciorek8.png"
-      />
+      /> -->
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[8]"
+        v-if="storeRose.rosColection[7]"
         src="../assets/paciorek9.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[9]"
+        v-if="storeRose.rosColection[8]"
         src="../assets/paciorek10.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[10]"
+        v-if="storeRose.rosColection[9]"
         src="../assets/paciorek11.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[11]"
+        v-if="storeRose.rosColection[10]"
         src="../assets/paciorek12.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[12]"
+        v-if="storeRose.rosColection[11]"
         src="../assets/paciorek13.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[13]"
+        v-if="storeRose.rosColection[12]"
         src="../assets/paciorek14.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[14]"
+        v-if="storeRose.rosColection[13]"
         src="../assets/paciorek15.png"
       />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek16.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek17.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek18.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek19.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek20.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek21.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek22.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek23.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek24.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek25.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek26.png" />
-      <img class="paciorek1" v-if="false" src="../assets/paciorek27.png" />
-      <ion-button class="button-forward" fill="outline">Dalej</ion-button>
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[14]"
+        src="../assets/paciorek16.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[15]"
+        src="../assets/paciorek17.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[16]"
+        src="../assets/paciorek18.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[17]"
+        src="../assets/paciorek19.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[18]"
+        src="../assets/paciorek20.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[19]"
+        src="../assets/paciorek21.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[20]"
+        src="../assets/paciorek22.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[21]"
+        src="../assets/paciorek23.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[22]"
+        src="../assets/paciorek24.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[23]"
+        src="../assets/paciorek25.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[24]"
+        src="../assets/paciorek26.png"
+      />
+      <img
+        class="paciorek1"
+        v-if="storeRose.rosColection[25]"
+        src="../assets/paciorek27.png"
+      />
+      <ion-button
+        class="button-reset"
+        fill="outline"
+        @click="storeRose.reset()"
+      >
+        Reset
+      </ion-button>
+      <ion-button
+        class="button-forward"
+        fill="outline"
+        @click="storeRose.next()"
+        >Dalej</ion-button
+      >
       <!-- <button class="button-forward-1">Dalej</button> -->
       <!-- <div class="current"></div>
           <div class="current2"></div> -->
@@ -170,10 +230,11 @@ onUnmounted(() => {
 
 #game-board {
   width: 800px; /* Sztywna szerokość bazowa */
-  height: 1300px; /* Sztywna wysokość bazowa */
+  height: 1400px; /* Sztywna wysokość bazowa */
   background-color: #f0d9b5; /* Przykładowy kolor planszy */
   position: relative;
-  transform-origin: top center; /* Skalowanie od środka */
+  /* transform-origin: center center; */
+  transform-origin: top center;
   flex-shrink: 0;
 }
 
@@ -190,5 +251,15 @@ onUnmounted(() => {
   position: absolute;
   top: 88%;
   left: 72%;
+  z-index: 10;
+}
+
+.button-reset {
+  height: 5%;
+  width: 20%;
+  position: absolute;
+  top: 88%;
+  left: 7%;
+  z-index: 10;
 }
 </style>
