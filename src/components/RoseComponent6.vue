@@ -178,7 +178,8 @@ function resizeGame() {
   if (!board.value) return;
 
   const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+  const SYSTEM_BAR_BUFFER = 90;
+  const windowHeight = window.innerHeight - SYSTEM_BAR_BUFFER;
 
   const scaleX = windowWidth / BASE_WIDTH;
   const scaleY = windowHeight / BASE_HEIGHT;
@@ -255,7 +256,7 @@ onUnmounted(() => {
 }
 
 .button-forward {
-  height: 5%;
+  height: 10%;
   width: 20%;
   position: absolute;
   top: 88%;
@@ -264,7 +265,7 @@ onUnmounted(() => {
 }
 
 .button-reset {
-  height: 5%;
+  height: 10%;
   width: 20%;
   position: absolute;
   top: 88%;
@@ -275,6 +276,7 @@ onUnmounted(() => {
 .button-container {
   position: absolute;
   width: 100%;
-  bottom: 180px;
+  /* bottom: 180px; */
+  bottom: calc(160px + env(safe-area-inset-bottom));
 }
 </style>
