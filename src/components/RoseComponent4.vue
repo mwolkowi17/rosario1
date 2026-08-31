@@ -138,13 +138,6 @@
         src="../assets/paciorek27.png"
       />
 
-      <!-- <button class="button-forward-1">Dalej</button> -->
-      <!-- <div class="current"></div>
-          <div class="current2"></div> -->
-      <!-- Twoja grafika planszy (100% szerokości i wysokości) -->
-      <!-- Twoje pionki pozycjonowane procentowo (%) -->
-    </div>
-    <div class="button-container">
       <ion-button
         class="button-reset"
         fill="outline"
@@ -176,28 +169,26 @@ const BASE_HEIGHT = 1400;
 
 function resizeGame() {
   if (!board.value) return;
-
+  //board.value = document.getElementById("game-board");
+  // Pobranie aktualnych wymiarów okna (ekranu telefonu)
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
 
+  // Obliczenie skali dla szerokości i wysokości
   const scaleX = windowWidth / BASE_WIDTH;
   const scaleY = windowHeight / BASE_HEIGHT;
 
-  const scale = Math.min(scaleX, scaleY);
-
-  // wysokość planszy po skalowaniu
-  const scaledHeight = BASE_HEIGHT * scale;
-
-  // pionowe wycentrowanie
-  const top = (windowHeight - scaledHeight) / 2;
-
-  board.value.style.transform = `translateX(-50%) scale(${scale})`;
-  board.value.style.top = `${top}px`;
+  // Wybór mniejszej skali, aby gra zmieściła się w całości (Letterboxing)
+  const scale: any = Math.min(scaleX, scaleY);
+  console.log(scale);
+  // Zastosowanie transformacji skalowania
+  //board.style.transform = `scale(${scale})`;
+  board.value.style.transform = `scale(${scale})`;
 }
 
 // Wywołanie przy załadowaniu i każdej zmianie rozmiaru/orientacji ekranu
 //window.addEventListener("resize", resizeGame);
-// window.addEventListener("DOMContentLoaded", resizeGame);
+window.addEventListener("DOMContentLoaded", resizeGame);
 onMounted(() => {
   board.value = document.getElementById("game-board");
   resizeGame();
@@ -227,23 +218,20 @@ onUnmounted(() => {
 #game-container {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   position: relative;
-  background-color: #f0d9b5;
+  overflow: hidden;
 }
 
 #game-board {
-  width: 800px;
-  height: 1300px;
-  background-color: #f0d9b5;
-  position: absolute;
-
-  /* najważniejsze */
-  top: 0;
-  left: 50%;
-
+  width: 800px; /* Sztywna szerokość bazowa */
+  height: 1400px; /* Sztywna wysokość bazowa */
+  background-color: #f0d9b5; /* Przykładowy kolor planszy */
+  position: relative;
+  /* transform-origin: center center; */
   transform-origin: top center;
-
   flex-shrink: 0;
 }
 
@@ -258,7 +246,7 @@ onUnmounted(() => {
   height: 5%;
   width: 20%;
   position: absolute;
-  top: 88%;
+  top: 84%;
   right: 20px;
   z-index: 10;
 }
@@ -267,7 +255,7 @@ onUnmounted(() => {
   height: 5%;
   width: 20%;
   position: absolute;
-  top: 88%;
+  top: 84%;
   left: 20px;
   z-index: 10;
 }

@@ -14,7 +14,8 @@
       </ion-header> -->
       <!-- <RoseComponent /> -->
       <!-- <RoseComponent2 /> -->
-      <RoseComponent3 />
+      <!-- <RoseComponent3 /> -->
+      <rose-component4 />
     </ion-content>
   </ion-page>
 </template>
@@ -32,6 +33,7 @@ import { useRosaStore } from "@/stores/rosaStore";
 import RoseComponent from "@/components/RoseComponent.vue";
 import RoseComponent2 from "@/components/RoseComponent2.vue";
 import RoseComponent3 from "@/components/RoseComponent3.vue";
+import RoseComponent4 from "@/components/RoseComponent4.vue";
 
 const storeRose = useRosaStore();
 </script>
