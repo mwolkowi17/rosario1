@@ -137,14 +137,8 @@
         v-if="storeRose.rosColection[25]"
         src="../assets/paciorek27.png"
       />
-
-      <!-- <button class="button-forward-1">Dalej</button> -->
-      <!-- <div class="current"></div>
-          <div class="current2"></div> -->
-      <!-- Twoja grafika planszy (100% szerokości i wysokości) -->
-      <!-- Twoje pionki pozycjonowane procentowo (%) -->
-    </div>
-    <div class="button-container">
+      <PadreNuestro v-if="storeRose.ifPadre()" />
+      <AveMaria v-if="storeRose.ifAve()" />
       <ion-button
         class="button-reset"
         fill="outline"
@@ -165,6 +159,8 @@
 import { useRosaStore } from "@/stores/rosaStore";
 import { IonButton } from "@ionic/vue";
 import { ref, onMounted, onUnmounted } from "vue";
+import PadreNuestro from "./PadreNuestro.vue";
+import AveMaria from "./AveMaria.vue";
 
 const storeRose = useRosaStore();
 
@@ -178,7 +174,8 @@ function resizeGame() {
   if (!board.value) return;
 
   const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+  const SYSTEM_BAR_BUFFER = 90;
+  const windowHeight = window.innerHeight - SYSTEM_BAR_BUFFER;
 
   const scaleX = windowWidth / BASE_WIDTH;
   const scaleY = windowHeight / BASE_HEIGHT;
@@ -255,26 +252,29 @@ onUnmounted(() => {
 }
 
 .button-forward {
-  height: 5%;
-  width: 20%;
+  height: 150px;
+  width: 150px;
   position: absolute;
-  top: 88%;
-  right: 20px;
+  top: 1200px;
+  right: 40px;
   z-index: 10;
+  font-size: 40px;
 }
 
 .button-reset {
-  height: 5%;
-  width: 20%;
+  height: 150px;
+  width: 150px;
   position: absolute;
-  top: 88%;
-  left: 20px;
+  top: 1200px;
+  left: 40px;
   z-index: 10;
+  font-size: 40px;
 }
 
 .button-container {
   position: absolute;
   width: 100%;
-  bottom: 180px;
+  /* bottom: 180px; */
+  bottom: calc(160px + env(safe-area-inset-bottom));
 }
 </style>

@@ -27,7 +27,7 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     false, // 1 Ojcze 0
     false, //1 Zdrowaś 1
     false, //2 Zdrowaś 2
-    false, //3 Zdrowaś 3
+    false, //3 Zdrowaś 3 tu trzeba dołożyć chwała ojcu i synowi
     false, //1 Ojcze 4
     false, //1 Zdrowaś 5
     false, //2 Zdrowaś 6
@@ -38,7 +38,7 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     false, //7 Zdrowaś 11
     false, //8 Zdrowaś 12
     false, //9 Zdrowaś 13
-    false, //10 Zdrowaś 14
+    false, //10 Zdrowaś 14 tu trzeba dołożyć chwała ojcu i synowi
     false, //1 Ojcze 15
     false, //2 Zdrowaś 16
     false, //3 Zdrowaś 17
@@ -48,7 +48,7 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     false, //7 Zdrowaś 21
     false, //8 Zdrowaś 22
     false, //9 Zdrowaś 23
-    false, //10 Zdrowaś 24
+    false, //10 Zdrowaś 24 tu trzeba dołożyć chwała ojcu i synowi
   ]);
 
   function next() {
@@ -59,18 +59,23 @@ export const useRosaStore = defineStore("rosarioStore", () => {
 
   function reset() {
     console.log("reset");
-    //   rosColection.value.forEach((_, x) => {
-    //   rosColection.value[x] = false;
-    // });
-
-    // for (let x = 0; x < rosColection.value.length; x++) {
-    //   rosColection.value[x] = false;
-    //   console.log(rosColection.value[x]);
-    // }
     rosColection.value.fill(false);
     counter.value = 0;
     console.log(rosColection.value);
   }
 
-  return { counter, rosDict, rosColection, next, reset };
+  function ifPadre() {
+    if (counter.value === 1) {
+      return true;
+    } else if (counter.value === 5) return true;
+    else if (counter.value === 16) return true;
+    else if (counter.value === 27) return true;
+  }
+
+  function ifAve() {
+    if (counter.value > 1 && counter.value < 5) return true;
+    else if (counter.value > 5 && counter.value < 16) return true;
+  }
+
+  return { counter, rosDict, rosColection, next, reset, ifPadre, ifAve };
 });
