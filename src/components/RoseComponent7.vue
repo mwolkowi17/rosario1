@@ -137,9 +137,12 @@
         v-if="storeRose.rosColection[27]"
         src="../assets/paciorek27.png"
       />
-      <PadreNuestro v-if="storeRose.ifPadre()" />
-      <AveMaria v-if="storeRose.ifAve()" />
-      <Gloria v-if="storeRose.ifGloria()" />
+      <!-- <PadreNuestro v-if="storeRose.ifPadre()" /> -->
+      <PadreNuesrtoShort v-if="storeRose.ifPadre()" />
+      <!-- <AveMaria v-if="storeRose.ifAve()" /> -->
+      <AveMariaShort v-if="storeRose.ifAve()" />
+      <!-- <Gloria v-if="storeRose.ifGloria()" /> -->
+      <GloriaShort v-if="storeRose.ifGloria()" />
       <ion-button
         class="button-reset"
         fill="outline"
@@ -161,8 +164,11 @@ import { useRosaStore } from "@/stores/rosaStore";
 import { IonButton } from "@ionic/vue";
 import { ref, onMounted, onUnmounted } from "vue";
 import PadreNuestro from "./PadreNuestro.vue";
+import PadreNuesrtoShort from "./PadreNuesrtoShort.vue";
 import AveMaria from "./AveMaria.vue";
+import AveMariaShort from "./AveMariaShort.vue";
 import Gloria from "./Gloria.vue";
+import GloriaShort from "./GloriaShort.vue";
 
 const storeRose = useRosaStore();
 
