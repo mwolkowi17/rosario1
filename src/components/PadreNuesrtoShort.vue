@@ -31,5 +31,6 @@ import prayer from "../lib/preyers.json";
   color: #000000;
   font-size: 40px;
   text-align: center;
+  font-family: "Lato";
 }
 </style>

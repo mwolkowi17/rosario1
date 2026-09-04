@@ -35,6 +35,8 @@ import "@ionic/vue/css/palettes/dark.system.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import "@fontsource/lato/400.css"; // Regular (dla zwykłego tekstu)
+import "@fontsource/lato/700.css"; // Semi-Bold (dla nagłówków / wyróżnień)
 
 const app = createApp(App).use(IonicVue).use(router);
 

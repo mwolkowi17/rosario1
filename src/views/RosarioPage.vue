@@ -2,7 +2,11 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/home"></ion-back-button>
+          <!-- <ion-button @click="goBack">Back</ion-button> -->
+        </ion-buttons>
+        <ion-title>Różaniec</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -14,6 +18,8 @@
 
 <script setup lang="ts">
 import {
+  IonBackButton,
+  IonButtons,
   IonContent,
   IonHeader,
   IonPage,
