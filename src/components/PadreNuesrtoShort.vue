@@ -13,8 +13,10 @@ import prayer from "../lib/preyers.json";
   height: 200px;
   left: 190px;
   top: 220px;
-  background-color: #ffffff;
-  border: solid 2px #000000;
+  background-color: #f4f5f0;
+  border: solid 4px #00000063;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /*dla porównania nieco mocniejszy shadow*/
   padding: 10px;
   z-index: 11;
 }

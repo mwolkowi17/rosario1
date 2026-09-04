@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { f } from "vue-router/dist/router-CWoNjPRp.mjs";
-import { ref } from "vue";
+import { nextTick, ref } from "vue";
 
 export const useRosaStore = defineStore("rosarioStore", () => {
   const rosDict: Record<string, boolean> = {
@@ -60,6 +60,15 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     console.log(counter.value);
   }
 
+  async function previous() {
+    if (counter.value != 0) {
+      rosColection.value[counter.value - 1] = false;
+      await nextTick();
+      counter.value--;
+      console.log(counter.value);
+    }
+  }
+
   function reset() {
     console.log("reset");
     rosColection.value.fill(false);
@@ -93,6 +102,7 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     rosDict,
     rosColection,
     next,
+    previous,
     reset,
     ifPadre,
     ifAve,

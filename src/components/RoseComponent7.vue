@@ -143,19 +143,26 @@
       <AveMariaShort v-if="storeRose.ifAve()" />
       <!-- <Gloria v-if="storeRose.ifGloria()" /> -->
       <GloriaShort v-if="storeRose.ifGloria()" />
-      <ion-button
+      <!-- <ion-button
         class="button-reset"
         fill="outline"
         @click="storeRose.reset()"
       >
         Reset
-      </ion-button>
-      <ion-button
-        class="button-forward"
-        fill="outline"
+      </ion-button> -->
+      <!-- <button class="button-forward" fill="outline" @click="storeRose.next()">
+        Dalej
+      </button> -->
+      <img
+        class="button-back-img"
+        src="../assets/strzalka2.png"
+        @click="storeRose.previous()"
+      />
+      <img
+        class="button-forward-img"
+        src="../assets/strzalka1.png"
         @click="storeRose.next()"
-        >Dalej</ion-button
-      >
+      />
     </div>
   </div>
 </template>
@@ -234,13 +241,15 @@ onUnmounted(() => {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-color: #f0d9b5;
+  /*background-color: #f0d9b5;*/
+  background-color: #e2e5d8;
+  /*kolory proponowane: #e8efe9; #E2E5D8, #D2DDD0*/
 }
 
 #game-board {
   width: 800px;
   height: 1400px;
-  background-color: #f0d9b5;
+  background-color: #e2e5d8;
   position: absolute;
 
   /* najważniejsze */
@@ -267,6 +276,23 @@ onUnmounted(() => {
   right: 40px;
   z-index: 10;
   font-size: 40px;
+  background-image: url("../assets/strzalka1.png");
+}
+
+.button-forward-img {
+  position: absolute;
+  top: 1200px;
+  right: 40px;
+  width: 170px;
+  z-index: 10;
+}
+
+.button-back-img {
+  position: absolute;
+  top: 1200px;
+  left: 40px;
+  width: 170px;
+  z-index: 10;
 }
 
 .button-reset {

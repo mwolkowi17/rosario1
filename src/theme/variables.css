@@ -1,2 +1,37 @@
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+
+.xiaomi-rotation-fix {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a1a; /* Ciemne tło pasujące do aplikacji */
+  color: #ffffff;
+  z-index: 999999; /* Absolutny wierzch interfejsu */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Wklej w src/theme/variables.css na samym dole */
+/* ion-page.custom-page-bg,
+ion-page.custom-page-bg ion-content,
+ion-page.custom-page-bg ion-content::part(background),
+ion-page.custom-page-bg ion-content::part(scroll) {
+  --background: #44574e !important;
+  --ion-background-color: #44574e !important;
+  background-color: #44574e !important;
+} */
+
+/* Wykrywamy moment, w którym telefon Xiaomi przekręca się do boku */
+@media screen and (orientation: landscape) {
+  .xiaomi-rotation-fix {
+    display: flex; /* Wyświetla komunikat na całym ekranie i blokuje interfejs */
+  }
+}
