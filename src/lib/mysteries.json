@@ -1,0 +1,90 @@
+{
+  "radosne": [
+    {
+      "tajemnica": "1.Zwiastowanie Maryi",
+      "komentarz": "(Łk 1, 30–31) Nie bój się, Maryjo, znalazłaś bowiem łaskę u Boga. Oto poczniesz i porodzisz Syna, któremu nadasz imię Jezus."
+    },
+    {
+      "tajemnica": "2.Nawiedzenie św. Elżbiety",
+      "komentarz": "(Łk 1, 42) Błogosławiona jesteś między niewiastami i błogosławiony jest owoc Twojego łona."
+    },
+    {
+      "tajemnica": "3.Narodzenie Pana Jezusa",
+      "komentarz": "(Łk 2, 6–7) Kiedy tam przebywali, nadszedł dla Maryi czas rozwiązania. Porodziła swego pierworodnego Syna, owinęła Go w pieluszki i położyła w żłobie."
+    },
+    {
+      "tajemnica": "4.Ofiarowanie Pana Jezusa w świątyni",
+      "komentarz": "(Łk 2, 22–23): „Gdy upłynęły dni ich oczyszczenia według Prawa Mojżeszowego, przynieśli Je do Jerozolimy, aby Je przedstawić Panu."
+    },
+    {
+      "tajemnica": "5.Odnalezienie Jezusa w świątyni",
+      "komentarz": "(Łk 2, 46): „Dopiero po trzech dniach odnaleźli Go w świątyni, gdzie siedział wśród nauczycieli, słuchał ich i zadawał im pytania."
+    }
+  ],
+  "bolesne": [
+    {
+      "tajemnica": "1.Modlitwa Pana Jezusa w Ogrójcu",
+      "komentarz": "(Mk 14, 36): Abba, Ojcze, dla Ciebie wszystko jest możliwe: zabierz ten kielich ode Mnie! Lecz nie to, co Ja chcę, ale to, co Ty!"
+    },
+    {
+      "tajemnica": "2.Biczowanie Pana Jezusa",
+      "komentarz": "(J 19, 1): Wtedy Piłat wziął Jezusa i kazał Go biczować."
+    },
+    {
+      "tajemnica": "3.Cierniem koronowanie",
+      "komentarz": "(Mt 27, 29): Uplewszy wieniec z ciernia, włożyli Mu Go na głowę, a trzcinę w prawą rękę."
+    },
+    {
+      "tajemnica": "4.Dźwiganie krzyża na Kalwarię",
+      "komentarz": "(J 19, 17): Sam jednak dźwigając krzyż, wyszedł na miejsce zwane Miejscem Czaszki, po hebrajsku Golgota."
+    },
+    {
+      "tajemnica": "5.Urzyżowanie i śmierć Jezusa",
+      "komentarz": "(Łk 23, 46): Wtedy Jezus zawołał donośnym głosem: «Ojcze, w Twoje ręce powierzam ducha mojego». Po tych słowach wyzionął ducha"
+    }
+  ],
+  "chwalebne": [
+    {
+      "tajemnica": "1.Zmartwychwstanie Pana Jezusa",
+      "komentarz": "(Mt 28, 5–6): Anioł rzekł do niewiast: «Nie bój się! Szukacie Jezusa Ukrzyżowanego. Nie ma Go tutaj, bo zmartwychwstał, jak powiedział»"
+    },
+    {
+      "tajemnica": "2.Wniebowstąpienie Pana Jezusa",
+      "komentarz": "(Dz 1, 9): Kiedy to powiedział, został uniesiony w ich obecności do góry i obłok zabrał Go im sprzed oczu"
+    },
+    {
+      "tajemnica": "3.Zesłanie Ducha Świętego",
+      "komentarz": "(Dz 2, 4): I wszyscy zostali napełnieni Duchem Świętym, i zaczęli mówić obcymi językami, tak jak im Duch pozwalał mówić"
+    },
+    {
+      "tajemnica": "4.Wniebowzięcie Najświętszej Maryi Panny",
+      "komentarz": "(Pnp 2, 10): Odezwij się miły mój, i rzeknij mi: Wstań, przyjaciółko moja, piękna moja, i a pójdź!"
+    },
+    {
+      "tajemnica": "5.Ukoronowanie Maryi na Królową nieba i ziemi",
+      "komentarz": "(Ap 12, 1): Potem wielki znak się ukazał na niebie: Niewiasta obleczona w słońce i księżyc pod jej stopami, a na jej głowie wieniec z gwiazd dwunastu."
+    }
+  ],
+  "swiatla": [
+    {
+      "tajemnica": "1.Chrzest Pana Jezusa w Jordanie",
+      "komentarz": "(Mt 3, 16–17): A gdy Jezus został ochrzczony, natychmiast wyszedł z wody. I oto otworzyły Mu się niebiosa [...] a głos z nieba mówił: «Ten jest mój Syn umiem, w którym mam upodobanie»"
+    },
+    {
+      "tajemnica": "2.Objawienie się Jezusa na weselu w Kanie",
+      "komentarz": "(J 2, 11): Taki to początek znaków uczynił Jezus w Kanie Galilejskiej i objawił swoją chwałę, a uczniowie uwierzyli w Niego."
+    },
+    {
+      "tajemnica": "3.Głoszenie królestwa i wzywanie do nawrócenia",
+      "komentarz": "(Mk 1, 15): Czas się wypełnił i bliskie jest królestwo Boże. Nawracajcie się i wierzcie w Ewangelię!"
+    },
+    {
+      "tajemnica": "4.Przemienienie Pańskie na górze Tabor",
+      "komentarz": "(Mt 17, 2): Tam przemienił się wobec nich: twarz Jego zajaśniała jak słońce, odzienie zaś stało się białe jak światło"
+    },
+    {
+      "tajemnica": "5.Ustanowienie Eucharystii",
+      "komentarz": "(Mt 26, 26): A gdy jedli, Jezus wziął chleb i odmówił błogosławieństwo, połamał i dał uczniom, mówiąc: «Bierzcie i jedzcie, to jest Ciało moje»"
+    }
+  ]
+}
