@@ -137,12 +137,14 @@
         v-if="storeRose.rosColection[27]"
         src="../assets/paciorek27.png"
       />
+      <Mysterio />
       <!-- <PadreNuestro v-if="storeRose.ifPadre()" /> -->
       <PadreNuesrtoShort v-if="storeRose.ifPadre()" />
       <!-- <AveMaria v-if="storeRose.ifAve()" /> -->
       <AveMariaShort v-if="storeRose.ifAve()" />
       <!-- <Gloria v-if="storeRose.ifGloria()" /> -->
       <GloriaShort v-if="storeRose.ifGloria()" />
+
       <!-- <ion-button
         class="button-reset"
         fill="outline"
@@ -176,6 +178,7 @@ import AveMaria from "./AveMaria.vue";
 import AveMariaShort from "./AveMariaShort.vue";
 import Gloria from "./Gloria.vue";
 import GloriaShort from "./GloriaShort.vue";
+import Mysterio from "./Mysterio.vue";
 
 const storeRose = useRosaStore();
 
