@@ -5,6 +5,9 @@
 </template>
 <script setup lang="ts">
 import prayer from "../lib/preyers.json";
+import { ref, onMounted, onUnmounted } from "vue";
+const isFontReady = ref(false);
+let fontCheckInterval: any = null;
 </script>
 <style scoped>
 .preyer-container {

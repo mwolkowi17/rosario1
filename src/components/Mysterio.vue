@@ -1,22 +1,31 @@
 <template>
   <div class="mysterio-container">
     <div class="main-title">
-      {{ mysterio.radosne[4].tajemnica }}
+      {{
+        mysterio.radosne[rosaStore.nrOfMysterio(rosaStore.counter)].tajemnica
+      }}
     </div>
     <div class="main-text">
-      {{ mysterio.radosne[4].komentarz }}
+      {{
+        mysterio.radosne[rosaStore.nrOfMysterio(rosaStore.counter)].komentarz
+      }}
     </div>
-    <button class="button-mysterio">Dalej</button>
+    <button class="button-mysterio" @click="rosaStore.next()">Dalej</button>
   </div>
 </template>
 <script setup lang="ts">
 import mysterio from "../lib/mysteries.json";
+import { useRosaStore } from "@/stores/rosaStore";
+
+const rosaStore = useRosaStore();
+const currentMysteryIndex =
+  typeof rosaStore.nrOfMysterio === "number" ? rosaStore.nrOfMysterio : 0;
 </script>
 <style scoped>
 .mysterio-container {
   position: absolute;
   width: 600px;
-  height: 600px;
+  height: 800px;
   left: 90px;
   top: 160px;
   background-color: #f4f5f0;
@@ -24,7 +33,7 @@ import mysterio from "../lib/mysteries.json";
   border-radius: 20px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /*dla porównania nieco mocniejszy shadow*/
   padding: 30px;
-  z-index: 11;
+  z-index: 12;
 }
 
 .main-title {
@@ -43,10 +52,10 @@ import mysterio from "../lib/mysteries.json";
 
 .button-mysterio {
   position: absolute;
-  width: 250px;
-  height: 70px;
-  background-color: green;
-  left: 170px;
+  width: 300px;
+  height: 100px;
+  background-color: #3b5732;
+  left: 150px;
   bottom: 30px;
   font-size: 40px;
   font-family: "Lato";

@@ -5,7 +5,14 @@
   </div>
 </template>
 <script setup lang="ts">
+import { onMounted, onUnmounted, ref } from "vue";
 import prayer from "../lib/preyers.json";
+import { useRosaStore } from "@/stores/rosaStore";
+
+const storeRose = useRosaStore();
+
+const isFontReady = ref(false);
+let fontCheckInterval: any = null;
 </script>
 <style scoped>
 .preyer-container {

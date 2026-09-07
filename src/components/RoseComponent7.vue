@@ -29,12 +29,12 @@
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[6]"
+        v-if="storeRose.rosColection[7]"
         src="../assets/paciorek6.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[7]"
+        v-if="storeRose.rosColection[8]"
         src="../assets/paciorek7.png"
       />
       <!-- <img
@@ -44,100 +44,101 @@
       /> -->
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[8]"
+        v-if="storeRose.rosColection[9]"
         src="../assets/paciorek9.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[9]"
+        v-if="storeRose.rosColection[10]"
         src="../assets/paciorek10.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[10]"
+        v-if="storeRose.rosColection[11]"
         src="../assets/paciorek11.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[11]"
+        v-if="storeRose.rosColection[12]"
         src="../assets/paciorek12.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[12]"
+        v-if="storeRose.rosColection[13]"
         src="../assets/paciorek13.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[13]"
+        v-if="storeRose.rosColection[14]"
         src="../assets/paciorek14.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[14]"
+        v-if="storeRose.rosColection[15]"
         src="../assets/paciorek15.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[15]"
+        v-if="storeRose.rosColection[16]"
         src="../assets/paciorek16.png"
       />
       <img
-        class="paciorek1"
-        v-if="storeRose.rosColection[17]"
+        class="paciorek1 ojcze-nasz"
+        v-if="storeRose.rosColection[18]"
         src="../assets/paciorek17.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[18]"
+        v-if="storeRose.rosColection[20]"
         src="../assets/paciorek18.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[19]"
+        v-if="storeRose.rosColection[21]"
         src="../assets/paciorek19.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[20]"
+        v-if="storeRose.rosColection[22]"
         src="../assets/paciorek20.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[21]"
+        v-if="storeRose.rosColection[23]"
         src="../assets/paciorek21.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[22]"
+        v-if="storeRose.rosColection[24]"
         src="../assets/paciorek22.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[23]"
+        v-if="storeRose.rosColection[25]"
         src="../assets/paciorek23.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[24]"
+        v-if="storeRose.rosColection[26]"
         src="../assets/paciorek24.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[25]"
+        v-if="storeRose.rosColection[27]"
         src="../assets/paciorek25.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[26]"
+        v-if="storeRose.rosColection[28]"
         src="../assets/paciorek26.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[27]"
+        v-if="storeRose.rosColection[29]"
         src="../assets/paciorek27.png"
       />
-      <Mysterio />
+      <p class="font-load">txt</p>
+      <Mysterio v-if="storeRose.ifMysterio()" />
       <!-- <PadreNuestro v-if="storeRose.ifPadre()" /> -->
       <PadreNuesrtoShort v-if="storeRose.ifPadre()" />
       <!-- <AveMaria v-if="storeRose.ifAve()" /> -->
@@ -145,16 +146,6 @@
       <!-- <Gloria v-if="storeRose.ifGloria()" /> -->
       <GloriaShort v-if="storeRose.ifGloria()" />
 
-      <!-- <ion-button
-        class="button-reset"
-        fill="outline"
-        @click="storeRose.reset()"
-      >
-        Reset
-      </ion-button> -->
-      <!-- <button class="button-forward" fill="outline" @click="storeRose.next()">
-        Dalej
-      </button> -->
       <img
         class="button-back-img"
         src="../assets/strzalka2.png"
@@ -170,13 +161,9 @@
 </template>
 <script setup lang="ts">
 import { useRosaStore } from "@/stores/rosaStore";
-import { IonButton } from "@ionic/vue";
 import { ref, onMounted, onUnmounted } from "vue";
-import PadreNuestro from "./PadreNuestro.vue";
 import PadreNuesrtoShort from "./PadreNuesrtoShort.vue";
-import AveMaria from "./AveMaria.vue";
 import AveMariaShort from "./AveMariaShort.vue";
-import Gloria from "./Gloria.vue";
 import GloriaShort from "./GloriaShort.vue";
 import Mysterio from "./Mysterio.vue";
 
@@ -313,5 +300,15 @@ onUnmounted(() => {
   width: 100%;
   /* bottom: 180px; */
   bottom: calc(160px + env(safe-area-inset-bottom));
+}
+
+.font-load {
+  position: absolute;
+  left: 190px;
+  top: 220px;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Lato";
+  color: #e2e5d8;
 }
 </style>
