@@ -1,5 +1,5 @@
 <template>
-  <div class="preyer-container">
+  <div class="preyer-container fade-in">
     <p class="main-text">{{ prayer.Zdrowas_Mario }}</p>
   </div>
 </template>
@@ -20,6 +20,20 @@ import prayer from "../lib/preyers.json";
   padding: 10px;
   z-index: 11;
 }
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .main-title {
   color: #000000;
   font-size: 44px;

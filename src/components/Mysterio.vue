@@ -1,5 +1,5 @@
 <template>
-  <div class="mysterio-container">
+  <div class="mysterio-container fade-in">
     <div class="main-title">
       {{
         mysterio.radosne[rosaStore.nrOfMysterio(rosaStore.counter)].tajemnica
@@ -26,7 +26,7 @@ const currentMysteryIndex =
   position: absolute;
   width: 600px;
   height: 800px;
-  left: 90px;
+  left: 95px;
   top: 160px;
   background-color: #f4f5f0;
   border: solid 4px #00000063;
@@ -34,6 +34,19 @@ const currentMysteryIndex =
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /*dla porównania nieco mocniejszy shadow*/
   padding: 30px;
   z-index: 12;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .main-title {
@@ -61,5 +74,6 @@ const currentMysteryIndex =
   font-family: "Lato";
   border-radius: 20px;
   border: solid 2px #000000;
+  color: #ffffff;
 }
 </style>

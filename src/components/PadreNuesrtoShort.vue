@@ -1,5 +1,5 @@
 <template>
-  <div class="preyer-container">
+  <div class="preyer-container fade-in">
     <p class="main-text">{{ prayer.Ojcze_Nasz }}</p>
   </div>
 </template>
@@ -22,6 +22,19 @@ let fontCheckInterval: any = null;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /*dla porównania nieco mocniejszy shadow*/
   padding: 10px;
   z-index: 11;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .main-title {
