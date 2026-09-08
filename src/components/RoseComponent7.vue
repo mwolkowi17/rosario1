@@ -204,6 +204,7 @@ onMounted(() => {
   board.value = document.getElementById("game-board");
   resizeGame();
   window.addEventListener("resize", resizeGame);
+  storeRose.reset();
 });
 
 onUnmounted(() => {

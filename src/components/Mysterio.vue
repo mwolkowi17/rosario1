@@ -2,12 +2,14 @@
   <div class="mysterio-container fade-in">
     <div class="main-title">
       {{
-        mysterio.radosne[rosaStore.nrOfMysterio(rosaStore.counter)].tajemnica
+        mysterio[WhichDay(nrDnia)][rosaStore.nrOfMysterio(rosaStore.counter)]
+          .tajemnica
       }}
     </div>
     <div class="main-text">
       {{
-        mysterio.radosne[rosaStore.nrOfMysterio(rosaStore.counter)].komentarz
+        mysterio[WhichDay(nrDnia)][rosaStore.nrOfMysterio(rosaStore.counter)]
+          .komentarz
       }}
     </div>
     <button class="button-mysterio" @click="rosaStore.next()">Dalej</button>
@@ -20,6 +22,23 @@ import { useRosaStore } from "@/stores/rosaStore";
 const rosaStore = useRosaStore();
 const currentMysteryIndex =
   typeof rosaStore.nrOfMysterio === "number" ? rosaStore.nrOfMysterio : 0;
+
+const dzisiaj = new Date();
+const nrDnia = dzisiaj.getDay();
+console.log(nrDnia);
+
+function WhichDay(daynr: number): keyof typeof mysterio {
+  if (daynr === 1 || daynr === 6) {
+    return "radosne";
+  } else if (daynr === 4) {
+    return "swiatla";
+  } else if (daynr === 2 || daynr === 5) {
+    return "bolesne";
+  } else if (daynr === 0 || daynr === 3) {
+    return "chwalebne";
+  }
+  return "chwalebne";
+}
 </script>
 <style scoped>
 .mysterio-container {
