@@ -64,11 +64,11 @@
         <ion-grid class="full-grid">
           <ion-row class="my-row">
             <ion-col class="timer-block custom-spacing" @click="goToRosario">
-              <!-- <img
-                class="timer-icon"
-                src="../assets/timer_new_2.png"
-                height="130"
-              /> -->
+              <img
+                class="rosario-icon"
+                src="../assets/rosario1.png"
+                height="150"
+              />
               <h6 class="text-one timer-tekst">Różaniec</h6>
             </ion-col>
           </ion-row>
@@ -77,22 +77,15 @@
               class="czytanie-block custom-spacing"
               @click="goToCzytanie"
             >
-              <!-- <img class="czytanie-icon" src="../assets/czytanie_new_2.png" /> -->
+              <img class="mysterios-icon" src="../assets/mysterios1.png" />
               <h6 class="text-two czytanie">Tajemnice Różańca</h6>
             </ion-col>
           </ion-row>
           <ion-row class="my-row">
             <ion-col class="grupy-block custom-spacing" @click="goToGrupy">
-              <!-- <img src="../assets/grupy_new_small_2.png" height="120" /> -->
+              <img class="mysterios-icon" src="../assets/o_modlitwie1.png" />
               <h6 class="text-one grupy">O Różańcu</h6>
             </ion-col>
-            <!-- <ion-col
-              class="kalendarium-block custom-spacing"
-              @click="goToKalendarium"
-            >
-              <img src="../assets/kalendarium_new.png" />
-              <h6 class="text-two kalendarium">kalendarium</h6>
-            </ion-col> -->
           </ion-row>
         </ion-grid>
       </div>
@@ -200,6 +193,9 @@ async function goToKalendarium() {
 </script>
 
 <style scoped>
+/* ion-content {
+  --padding-bottom: env(safe-area-inset-bottom);
+} */
 .menu-blok {
   display: flex;
   flex-direction: row;
@@ -220,6 +216,7 @@ async function goToKalendarium() {
   top: 50%;
   transform: translateY(-50%); */
   height: 100%;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 #container strong {
@@ -247,7 +244,7 @@ async function goToKalendarium() {
 .timer-tekst {
   position: absolute;
   text-align: center;
-  /* margin-top: 140px; */
+  margin-top: 170px;
   font-size: 21px;
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.718);
@@ -256,32 +253,6 @@ async function goToKalendarium() {
   width: 100%;
 }
 
-/* .text-konferencje {
-  position: absolute;
-  text-align: center;
-  margin-bottom: 150px;
-  font-size: 21px;
-  font-weight: 400;
-  color: #1a221c;
-  background-color: rgba(255, 255, 255, 0.718);
-
-  width: 100%;
-  padding: 5px;
-} */
-/* 
-.jak-tekst {
-  position: absolute;
-  text-align: center;
-  margin-bottom: 150px;
-  font-size: 21px;
-  font-weight: 400;
-  color: #1a221c;
-  background-color: rgba(255, 255, 255, 0.618);
- 
-  width: 100%;
-  padding: 5px;
-} */
-
 .text-two {
   text-align: center;
 }
@@ -289,7 +260,7 @@ async function goToKalendarium() {
 .czytanie {
   position: absolute;
   text-align: center;
-
+  margin-top: 170px;
   font-size: 21px;
   font-weight: 400;
   color: #2e3a30;
@@ -301,7 +272,7 @@ async function goToKalendarium() {
 
 .grupy {
   position: absolute;
-
+  margin-top: 170px;
   font-size: 21px;
   font-weight: 400;
   text-align: center;
@@ -313,7 +284,7 @@ async function goToKalendarium() {
 }
 
 .timer-block {
-  background-color: #44574e;
+  background-color: #b0bbb6;
   color: #000000;
   border-radius: 16px;
   margin-top: 8px;
@@ -328,8 +299,9 @@ async function goToKalendarium() {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.timer-icon {
+.rosario-icon {
   margin-bottom: 50px;
+  border-radius: 16px;
 }
 
 .konferencje-image {
@@ -353,8 +325,9 @@ async function goToKalendarium() {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.czytanie-icon {
-  margin-top: 30px;
+.mysterios-icon {
+  margin-bottom: 50px;
+  border-radius: 16px;
 }
 
 .jak-block-1 {
@@ -378,7 +351,7 @@ async function goToKalendarium() {
 }
 
 .grupy-block {
-  background-color: #4b5d2c;
+  background-color: #e0e0df;
   color: #000000;
   border-radius: 16px;
   margin-top: 4px;
