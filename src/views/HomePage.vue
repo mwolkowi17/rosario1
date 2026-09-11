@@ -83,7 +83,7 @@
           </ion-row>
           <ion-row class="my-row">
             <ion-col class="grupy-block custom-spacing" @click="goToGrupy">
-              <img class="mysterios-icon" src="../assets/o_modlitwie1.png" />
+              <img class="mysterios-icon" src="../assets/o_modlitwie2.png" />
               <h6 class="text-one grupy">O Różańcu</h6>
             </ion-col>
           </ion-row>
