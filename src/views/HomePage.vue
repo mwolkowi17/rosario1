@@ -11,25 +11,17 @@
           <!-- <img src="../assets/home_ikona.png" height="20" /> -->
           <span class="menu-napis">Home</span>
         </div>
-        <div class="menu-item ion-padding menu-blok" @click="goToTimer">
+        <div class="menu-item ion-padding menu-blok" @click="goToTajemnice">
           <!-- <img src="../assets/timer_new_blue.png" height="20" /> -->
-          <span class="menu-napis">Timer</span>
+          <span class="menu-napis">Różaniec</span>
         </div>
-        <div class="menu-item ion-padding menu-blok" @click="goToCzytanie">
+        <div class="menu-item ion-padding menu-blok" @click="goToTajemnice">
           <!-- <img src="../assets/czytanie_new.png" height="12" /> -->
-          <span class="menu-napis">Czytanie</span>
+          <span class="menu-napis">Tajemnice Różańca</span>
         </div>
-        <div class="menu-item ion-padding menu-blok" @click="goToManual">
-          <!-- <img src="../assets/jak_medytowac_new_i.png" height="20" /> -->
-          <span class="menu-napis">Jak medytować</span>
-        </div>
-        <div class="menu-item ion-padding menu-blok" @click="goToKonferencje">
-          <!-- <img src="../assets/konferencje1_blue.png" height="20" /> -->
-          <span class="menu-napis">Konferencje</span>
-        </div>
-        <div class="menu-item ion-padding menu-blok" @click="goToGrupy">
-          <!-- <img src="../assets/grupy_new_small_blue.png" height="20" /> -->
-          <span class="menu-napis">Grupy medytacyjne</span>
+        <div class="menu-item ion-padding menu-blok" @click="goToORozancu">
+          <!-- <img src="../assets/czytanie_new.png" height="12" /> -->
+          <span class="menu-napis">O Różańcu</span>
         </div>
         <!-- <div class="menu-item ion-padding" @click="goToKalendarium">
           Kalendarium
@@ -75,14 +67,14 @@
           <ion-row class="my-row">
             <ion-col
               class="czytanie-block custom-spacing"
-              @click="goToCzytanie"
+              @click="goToTajemnice"
             >
               <img class="mysterios-icon" src="../assets/mysterios1.png" />
               <h6 class="text-two czytanie">Tajemnice Różańca</h6>
             </ion-col>
           </ion-row>
           <ion-row class="my-row">
-            <ion-col class="grupy-block custom-spacing" @click="goToGrupy">
+            <ion-col class="grupy-block custom-spacing" @click="goToORozancu">
               <img class="mysterios-icon" src="../assets/o_modlitwie2.png" />
               <h6 class="text-one grupy">O Różańcu</h6>
             </ion-col>
@@ -101,8 +93,6 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonButton,
-  IonToggle,
   IonGrid,
   IonCol,
   IonRow,
@@ -155,10 +145,10 @@ async function goToTimer() {
   router.push("/timer");
 }
 
-async function goToCzytanie() {
+async function goToTajemnice() {
   Haptics.impact({ style: ImpactStyle.Light });
   menuController.close();
-  router.push("./czytanie");
+  router.push("./mysterios");
 }
 
 async function goToUstawienia() {
@@ -179,16 +169,10 @@ async function goToKonferencje() {
   router.push("/konferencje");
 }
 
-async function goToGrupy() {
+async function goToORozancu() {
   Haptics.impact({ style: ImpactStyle.Light });
   menuController.close();
-  router.push("/grupy");
-}
-
-async function goToKalendarium() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/kalendarium");
+  router.push("/about_rosario");
 }
 </script>
 
@@ -227,8 +211,6 @@ async function goToKalendarium() {
 #container p {
   font-size: 16px;
   line-height: 22px;
-
-  /* color: #8c8c8c; */
 
   margin: 0;
 }
@@ -284,7 +266,7 @@ async function goToKalendarium() {
 }
 
 .timer-block {
-  background-color: #b0bbb6;
+  background-color: #e2e5d8;
   color: #000000;
   border-radius: 16px;
   margin-top: 8px;
@@ -304,12 +286,12 @@ async function goToKalendarium() {
   border-radius: 16px;
 }
 
-.konferencje-image {
+/* .konferencje-image {
   margin-top: 30px;
-}
+} */
 
 .czytanie-block {
-  background-color: #ebe5db;
+  background-color: #e2e5d8;
   color: #000000;
   border-radius: 16px;
   /* border: solid 1px #395d9b; */
@@ -330,7 +312,7 @@ async function goToKalendarium() {
   border-radius: 16px;
 }
 
-.jak-block-1 {
+/* .jak-block-1 {
   background-color: #d1d3c6;
   color: #000000;
   border-radius: 16px;
@@ -338,20 +320,19 @@ async function goToKalendarium() {
   margin-left: 4px;
   margin-right: 8px;
   margin-bottom: 4px;
-  /* padding-top: 20px; */
-  /* background-image: url("../assets/konferencje_4.jpg"); */
+
   background-size: 100% 100%;
   background-repeat: no-repeat;
   border: solid 1px #aea9a0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
-.jak-icon {
+/* .jak-icon {
   margin-top: 50px;
-}
+} */
 
 .grupy-block {
-  background-color: #e0e0df;
+  background-color: #e2e5d8;
   color: #000000;
   border-radius: 16px;
   margin-top: 4px;
@@ -365,8 +346,8 @@ async function goToKalendarium() {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.kalendarium-block {
-  /* background-color: #f4eee2; */
+/* .kalendarium-block {
+  
   color: #000000;
   border-radius: 16px;
   border: solid 1px #395d9b;
@@ -375,7 +356,7 @@ async function goToKalendarium() {
   margin-right: 8px;
   margin-bottom: 8px;
   padding-top: 25px !important;
-}
+} */
 
 .custom-spacing {
   padding: 5px; /* góra/dół: 8px, boki: 12px */
@@ -406,9 +387,9 @@ async function goToKalendarium() {
   justify-content: center;
   align-items: center;
 }
-/* ion-grid {
+ion-grid {
   --ion-grid-column-padding: 50px;
-} */
+}
 .logo-grupy {
   margin-top: 40px;
 }

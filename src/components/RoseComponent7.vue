@@ -1,40 +1,53 @@
 <template>
   <div id="game-container">
     <div id="game-board">
-      <img src="../assets/rozaniec2.png" />
+      <img v-if="storeRose.counter < 20" src="../assets/rozaniec2.png" />
+      <img
+        v-show="storeRose.counter >= 20 && storeRose.counter < 33"
+        :src="img1"
+      />
+      <img
+        v-show="storeRose.counter >= 33 && storeRose.counter < 46"
+        :src="img2"
+      />
+      <img
+        v-show="storeRose.counter >= 46 && storeRose.counter < 59"
+        :src="img3"
+      />
+      <img v-show="storeRose.counter >= 59" :src="img4" />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[0]"
+        v-if="storeRose.rosColection[0] && storeRose.counter < 20"
         src="../assets/paciorek1.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[1]"
+        v-if="storeRose.rosColection[1] && storeRose.counter < 20"
         src="../assets/paciorek2.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[2]"
+        v-if="storeRose.rosColection[2] && storeRose.counter < 20"
         src="../assets/paciorek3.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[3]"
+        v-if="storeRose.rosColection[3] && storeRose.counter < 20"
         src="../assets/paciorek4.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[5]"
+        v-if="storeRose.rosColection[5] && storeRose.counter < 20"
         src="../assets/paciorek5.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[7]"
+        v-if="storeRose.rosColection[7] && storeRose.counter < 20"
         src="../assets/paciorek6.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[8]"
+        v-if="storeRose.rosColection[8] && storeRose.counter < 20"
         src="../assets/paciorek7.png"
       />
       <!-- <img
@@ -44,263 +57,395 @@
       /> -->
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[9]"
+        v-if="storeRose.rosColection[9] && storeRose.counter < 20"
         src="../assets/paciorek9.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[10]"
+        v-if="storeRose.rosColection[10] && storeRose.counter < 20"
         src="../assets/paciorek10.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[11]"
+        v-if="storeRose.rosColection[11] && storeRose.counter < 20"
         src="../assets/paciorek11.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[12]"
+        v-if="storeRose.rosColection[12] && storeRose.counter < 20"
         src="../assets/paciorek12.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[13]"
+        v-if="storeRose.rosColection[13] && storeRose.counter < 20"
         src="../assets/paciorek13.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[14]"
+        v-if="storeRose.rosColection[14] && storeRose.counter < 20"
         src="../assets/paciorek14.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[15]"
+        v-if="storeRose.rosColection[15] && storeRose.counter < 20"
         src="../assets/paciorek15.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[16]"
+        v-if="storeRose.rosColection[16] && storeRose.counter < 20"
         src="../assets/paciorek16.png"
       />
       <img
         class="paciorek1 ojcze-nasz"
-        v-if="storeRose.rosColection[18]"
+        v-if="
+          storeRose.rosColection[18] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek17.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[20]"
+        v-if="
+          storeRose.rosColection[20] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek18.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[21]"
+        v-if="
+          storeRose.rosColection[21] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek19.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[22]"
+        v-if="
+          storeRose.rosColection[22] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek20.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[23]"
+        v-if="
+          storeRose.rosColection[23] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek21.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[24]"
+        v-if="
+          storeRose.rosColection[24] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek22.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[25]"
+        v-if="
+          storeRose.rosColection[25] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek23.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[26]"
+        v-if="
+          storeRose.rosColection[26] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek24.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[27]"
+        v-if="
+          storeRose.rosColection[27] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek25.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[28]"
+        v-if="
+          storeRose.rosColection[28] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek26.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[29]"
+        v-if="
+          storeRose.rosColection[29] &&
+          storeRose.counter >= 20 &&
+          storeRose.counter < 33
+        "
         src="../assets/paciorek27.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[32]"
+        v-if="
+          storeRose.rosColection[32] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek28.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[33]"
+        v-if="
+          storeRose.rosColection[33] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek29.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[34]"
+        v-if="
+          storeRose.rosColection[34] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek30.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[35]"
+        v-if="
+          storeRose.rosColection[35] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek31.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[36]"
+        v-if="
+          storeRose.rosColection[36] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek32.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[37]"
+        v-if="
+          storeRose.rosColection[37] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek33.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[38]"
+        v-if="
+          storeRose.rosColection[38] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek34.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[39]"
+        v-if="
+          storeRose.rosColection[39] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek35.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[40]"
+        v-if="
+          storeRose.rosColection[40] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek36.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[41]"
+        v-if="
+          storeRose.rosColection[41] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek37.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[42]"
+        v-if="
+          storeRose.rosColection[42] &&
+          storeRose.counter >= 33 &&
+          storeRose.counter < 46
+        "
         src="../assets/paciorek38.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[45]"
+        v-if="
+          storeRose.rosColection[45] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek39.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[46]"
+        v-if="
+          storeRose.rosColection[46] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek40.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[47]"
+        v-if="
+          storeRose.rosColection[47] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek41.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[48]"
+        v-if="
+          storeRose.rosColection[48] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek42.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[49]"
+        v-if="
+          storeRose.rosColection[49] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek43.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[50]"
+        v-if="
+          storeRose.rosColection[50] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek44.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[51]"
+        v-if="
+          storeRose.rosColection[51] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek45.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[52]"
+        v-if="
+          storeRose.rosColection[52] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek46.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[53]"
+        v-if="
+          storeRose.rosColection[53] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek47.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[54]"
+        v-if="
+          storeRose.rosColection[54] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek48.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[55]"
+        v-if="
+          storeRose.rosColection[55] &&
+          storeRose.counter >= 46 &&
+          storeRose.counter < 59
+        "
         src="../assets/paciorek49.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[58]"
+        v-if="storeRose.rosColection[58] && storeRose.counter >= 59"
         src="../assets/paciorek50.png"
       />
 
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[59]"
+        v-if="storeRose.rosColection[59] && storeRose.counter >= 59"
         src="../assets/paciorek51.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[60]"
+        v-if="storeRose.rosColection[60] && storeRose.counter >= 59"
         src="../assets/paciorek51b.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[61]"
+        v-if="storeRose.rosColection[61] && storeRose.counter >= 59"
         src="../assets/paciorek52.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[62]"
+        v-if="storeRose.rosColection[62] && storeRose.counter >= 59"
         src="../assets/paciorek53.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[63]"
+        v-if="storeRose.rosColection[63] && storeRose.counter >= 59"
         src="../assets/paciorek54.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[64]"
+        v-if="storeRose.rosColection[64] && storeRose.counter >= 59"
         src="../assets/paciorek55.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[65]"
+        v-if="storeRose.rosColection[65] && storeRose.counter >= 59"
         src="../assets/paciorek56.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[66]"
+        v-if="storeRose.rosColection[66] && storeRose.counter >= 59"
         src="../assets/paciorek57.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[67]"
+        v-if="storeRose.rosColection[67] && storeRose.counter >= 59"
         src="../assets/paciorek58.png"
       />
       <img
         class="paciorek1"
-        v-if="storeRose.rosColection[68]"
+        v-if="storeRose.rosColection[68] && storeRose.counter >= 59"
         src="../assets/paciorek59.png"
       />
       <p class="font-load">txt</p>
@@ -332,6 +477,11 @@ import PadreNuesrtoShort from "./PadreNuesrtoShort.vue";
 import AveMariaShort from "./AveMariaShort.vue";
 import GloriaShort from "./GloriaShort.vue";
 import Mysterio from "./Mysterio.vue";
+// 1. Importowanie obrazków przez Vite, aby uzyskać ich finalne adresy URL
+import img1 from "../assets/rozaniec2_1.png";
+import img2 from "../assets/rozaniec2_2.png";
+import img3 from "../assets/rozaniec2_3.png";
+import img4 from "../assets/rozaniec2_4.png";
 
 const storeRose = useRosaStore();
 
@@ -371,6 +521,12 @@ onMounted(() => {
   resizeGame();
   window.addEventListener("resize", resizeGame);
   storeRose.reset();
+  const imagesToPreload = [img1, img2, img3, img4];
+
+  imagesToPreload.forEach((src) => {
+    const img = new Image();
+    img.src = src; // Przeglądarka natychmiast pobiera plik do pamięci podręcznej
+  });
 });
 
 onUnmounted(() => {
@@ -423,6 +579,8 @@ onUnmounted(() => {
   top: 0px;
   left: 0px;
   z-index: 2;
+  /* will-change: transform;
+  transform: translateZ(0); */
 }
 
 .button-forward {

@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { f } from "vue-router/dist/router-CWoNjPRp.mjs";
 import { nextTick, ref } from "vue";
+import { Haptics, ImpactStyle } from "@capacitor/haptics";
 
 export const useRosaStore = defineStore("rosarioStore", () => {
   const rosDict: Record<string, boolean> = {
@@ -95,12 +96,14 @@ export const useRosaStore = defineStore("rosarioStore", () => {
   const ifMysterioView = ref(false);
 
   function next() {
+    Haptics.impact({ style: ImpactStyle.Light });
     rosColection.value[counter.value] = true;
     counter.value++;
     console.log(counter.value);
   }
 
   async function previous() {
+    Haptics.impact({ style: ImpactStyle.Light });
     if (counter.value != 0) {
       rosColection.value[counter.value - 1] = false;
       await nextTick();
