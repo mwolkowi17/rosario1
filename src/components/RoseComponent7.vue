@@ -602,12 +602,20 @@ onUnmounted(() => {
   z-index: 10;
 }
 
+.button-forward-img:active {
+  filter: brightness(80%);
+}
+
 .button-back-img {
   position: absolute;
   top: 1200px;
   left: 40px;
   width: 170px;
   z-index: 10;
+}
+
+.button-back-img:active {
+  filter: brightness(80%);
 }
 
 .button-reset {

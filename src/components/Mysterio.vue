@@ -95,4 +95,8 @@ function WhichDay(daynr: number): keyof typeof mysterio {
   border: solid 2px #000000;
   color: #ffffff;
 }
+
+.button-mysterio:active {
+  filter: brightness(80%);
+}
 </style>

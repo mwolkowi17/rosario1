@@ -11,7 +11,7 @@
           <!-- <img src="../assets/home_ikona.png" height="20" /> -->
           <span class="menu-napis">Home</span>
         </div>
-        <div class="menu-item ion-padding menu-blok" @click="goToTajemnice">
+        <div class="menu-item ion-padding menu-blok" @click="goToRosario">
           <!-- <img src="../assets/timer_new_blue.png" height="20" /> -->
           <span class="menu-napis">Różaniec</span>
         </div>
@@ -139,12 +139,6 @@ async function goToRosario() {
   router.push("/rosario");
 }
 
-async function goToTimer() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/timer");
-}
-
 async function goToTajemnice() {
   Haptics.impact({ style: ImpactStyle.Light });
   menuController.close();
@@ -155,18 +149,6 @@ async function goToUstawienia() {
   Haptics.impact({ style: ImpactStyle.Light });
   menuController.close();
   router.push("./settings");
-}
-
-async function goToManual() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("./manual");
-}
-
-async function goToKonferencje() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/konferencje");
 }
 
 async function goToORozancu() {
@@ -286,10 +268,6 @@ async function goToORozancu() {
   border-radius: 16px;
 }
 
-/* .konferencje-image {
-  margin-top: 30px;
-} */
-
 .czytanie-block {
   background-color: #e2e5d8;
   color: #000000;
@@ -312,25 +290,6 @@ async function goToORozancu() {
   border-radius: 16px;
 }
 
-/* .jak-block-1 {
-  background-color: #d1d3c6;
-  color: #000000;
-  border-radius: 16px;
-  margin-top: 4px;
-  margin-left: 4px;
-  margin-right: 8px;
-  margin-bottom: 4px;
-
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  border: solid 1px #aea9a0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-} */
-
-/* .jak-icon {
-  margin-top: 50px;
-} */
-
 .grupy-block {
   background-color: #e2e5d8;
   color: #000000;
@@ -345,18 +304,6 @@ async function goToORozancu() {
   border: solid 1px #aea9a0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* .kalendarium-block {
-  
-  color: #000000;
-  border-radius: 16px;
-  border: solid 1px #395d9b;
-  margin-top: 4px;
-  margin-left: 4px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  padding-top: 25px !important;
-} */
 
 .custom-spacing {
   padding: 5px; /* góra/dół: 8px, boki: 12px */
