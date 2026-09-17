@@ -247,6 +247,7 @@ async function goToKalendarium() {
   /* margin-left: 10px; */
   padding-left: 16px;
   padding-right: 16px;
+  padding-bottom: env(safe-area-inset-bottom);
   /* margin-right: 10px; */
   background-color: #f4eee2;
   color: #000000;

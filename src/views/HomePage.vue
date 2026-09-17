@@ -8,75 +8,48 @@
       </ion-header>
       <ion-content>
         <div class="menu-item ion-padding menu-blok" @click="goToHome">
-          <!-- <img src="../assets/home_ikona.png" height="20" /> -->
           <span class="menu-napis">Home</span>
         </div>
         <div class="menu-item ion-padding menu-blok" @click="goToRosario">
-          <!-- <img src="../assets/timer_new_blue.png" height="20" /> -->
           <span class="menu-napis">Różaniec</span>
         </div>
         <div class="menu-item ion-padding menu-blok" @click="goToTajemnice">
-          <!-- <img src="../assets/czytanie_new.png" height="12" /> -->
           <span class="menu-napis">Tajemnice Różańca</span>
         </div>
         <div class="menu-item ion-padding menu-blok" @click="goToORozancu">
-          <!-- <img src="../assets/czytanie_new.png" height="12" /> -->
           <span class="menu-napis">O Różańcu</span>
-        </div>
-        <!-- <div class="menu-item ion-padding" @click="goToKalendarium">
-          Kalendarium
-        </div> -->
-        <div class="menu-item ion-padding menu-blok" @click="goToUstawienia">
-          <!-- <img src="../assets/klucz_narzedziowy.png" height="20" /> -->
-          <span class="menu-napis">Ustawienia</span>
         </div>
       </ion-content>
     </ion-menu>
 
     <ion-header :translucent="true">
       <ion-toolbar class="blok-gorny">
-        <!--Wersja z dużym kafelkiem timera-->
-        <ion-title>
-          <!-- <img src="../assets/logo_i_tytul.png" /> -->
-        </ion-title>
+        <ion-title>Różaniec na codzień</ion-title>
         <ion-buttons slot="end">
           <ion-menu-button style="font-size: 32px"></ion-menu-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content id="main-content" :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
+    <ion-content id="main-content" :fullscreen="true" class="ion-no-scroll">
       <div id="container">
         <ion-grid class="full-grid">
           <ion-row class="my-row">
-            <ion-col class="timer-block custom-spacing" @click="goToRosario">
-              <img
-                class="rosario-icon"
-                src="../assets/rosario1.png"
-                height="150"
-              />
-              <h6 class="text-one timer-tekst">Różaniec</h6>
+            <ion-col class="timer-block custom-card" @click="goToRosario">
+              <img class="card-icon" src="../assets/rosario1.png" />
+              <h6 class="card-label">Różaniec</h6>
             </ion-col>
           </ion-row>
           <ion-row class="my-row">
-            <ion-col
-              class="czytanie-block custom-spacing"
-              @click="goToTajemnice"
-            >
-              <img class="mysterios-icon" src="../assets/mysterios1.png" />
-              <h6 class="text-two czytanie">Tajemnice Różańca</h6>
+            <ion-col class="czytanie-block custom-card" @click="goToTajemnice">
+              <img class="card-icon" src="../assets/mysterios1.png" />
+              <h6 class="card-label">Tajemnice Różańca</h6>
             </ion-col>
           </ion-row>
           <ion-row class="my-row">
-            <ion-col class="grupy-block custom-spacing" @click="goToORozancu">
-              <img class="mysterios-icon" src="../assets/o_modlitwie2.png" />
-              <h6 class="text-one grupy">O Różańcu</h6>
+            <ion-col class="grupy-block custom-card" @click="goToORozancu">
+              <img class="card-icon" src="../assets/o_modlitwie2.png" />
+              <h6 class="card-label">O Różańcu</h6>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -103,23 +76,15 @@ import {
   onIonViewWillEnter,
   onIonViewWillLeave,
 } from "@ionic/vue";
-//import { onIonViewWillEnter } from "@ionic/vue";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 
-//operacje na czionkach tylko dla strony Home
-// 1. Gdy użytkownik wchodzi na stronę Home
 onIonViewWillEnter(() => {
-  // Wymuszamy standardowy rozmiar czcionki (100%) na elemencie HTML
   document.documentElement.style.fontSize = "100%";
 });
 
-// 2. Gdy użytkownik opuszcza stronę Home (idzie gdzieś indziej)
 onIonViewWillLeave(() => {
-  // Pobieramy zapisany rozmiar z localStorage
   const savedSize = localStorage.getItem("user-font-size");
-
   if (savedSize) {
-    // Przywracamy niestandardowy rozmiar dla reszty aplikacji
     const size = parseFloat(savedSize);
     document.documentElement.style.fontSize = `${size * 100}%`;
   }
@@ -159,9 +124,6 @@ async function goToORozancu() {
 </script>
 
 <style scoped>
-/* ion-content {
-  --padding-bottom: env(safe-area-inset-bottom);
-} */
 .menu-blok {
   display: flex;
   flex-direction: row;
@@ -173,171 +135,68 @@ async function goToORozancu() {
 .blok-gorny {
   background-color: #f2ead8 !important;
 }
-#container {
-  /* text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%); */
+/* Zapobiegamy pojawianiu się paska przewijania */
+ion-content.ion-no-scroll {
+  --overflow: hidden;
+}
+
+#container {
   height: 100%;
   padding-bottom: env(safe-area-inset-bottom);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-.text-one {
-  color: #1a221c;
-}
-
-.timer-tekst {
-  position: absolute;
-  text-align: center;
-  margin-top: 170px;
-  font-size: 21px;
-  font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.718);
-  /* border-radius: 10px; */
-  padding: 5px;
-  width: 100%;
-}
-
-.text-two {
-  text-align: center;
-}
-
-.czytanie {
-  position: absolute;
-  text-align: center;
-  margin-top: 170px;
-  font-size: 21px;
-  font-weight: 400;
-  color: #2e3a30;
-  background-color: rgba(255, 255, 255, 0.718);
-  /* border-radius: 10px; */
-  padding: 5px;
-  width: 100%;
-}
-
-.grupy {
-  position: absolute;
-  margin-top: 170px;
-  font-size: 21px;
-  font-weight: 400;
-  text-align: center;
-  color: #1a221c;
-  background-color: rgba(255, 255, 255, 0.618);
-  /* border-radius: 10px; */
-  padding: 5px;
-  width: 100%;
-}
-
-.timer-block {
-  background-color: #e2e5d8;
-  color: #000000;
-  border-radius: 16px;
-  margin-top: 8px;
-  margin-left: 8px;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  /* background-image: url("../assets/timer_new.png"); */
-  /* background-image: url("../assets/timer_2.png"); */
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  border: solid 1px #aea9a0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.rosario-icon {
-  margin-bottom: 50px;
-  border-radius: 16px;
-}
-
-.czytanie-block {
-  background-color: #e2e5d8;
-  color: #000000;
-  border-radius: 16px;
-  /* border: solid 1px #395d9b; */
-  margin-top: 4px;
-  margin-left: 8px;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  /* background-image: url("../assets/czytanie-back_4.jpg"); */
-  /* background-image: url("../assets/czytania_2.jpg"); */
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  border: solid 1px #aea9a0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.mysterios-icon {
-  margin-bottom: 50px;
-  border-radius: 16px;
-}
-
-.grupy-block {
-  background-color: #e2e5d8;
-  color: #000000;
-  border-radius: 16px;
-  margin-top: 4px;
-  margin-left: 8px;
-  margin-right: 4px;
-  margin-bottom: 8px;
-  /* background-image: url("../assets/grupy_4.jpg"); */
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  border: solid 1px #aea9a0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.custom-spacing {
-  padding: 5px; /* góra/dół: 8px, boki: 12px */
-  /* margin: 8px; */
+  box-sizing: border-box;
 }
 
 .full-grid {
   height: 100%;
-  /* height: 92.4vh; */
-  padding: 0;
-
+  padding: 4px;
   display: flex;
   flex-direction: column;
 }
 
-.row-first {
-  height: 25%;
-}
 .my-row {
-  /* height: 220px; */
-  /* height: 25%; */
   flex: 1;
+  min-height: 0; /* Kluczowe dla flexboxa, aby wiersze mogły się zmniejszać */
+  padding: 4px 0;
 }
 
-.my-row ion-col {
+.custom-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #e2e5d8;
+  border: solid 1px #aea9a0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 0 !important;
 }
-ion-grid {
-  --ion-grid-column-padding: 50px;
+
+.card-icon {
+  margin-top: 10px; /* Dostosuj tę wartość, aby podnieść/opuścić obrazek */
+  max-height: calc(100% - 40px); /* 100% minus szacowana wysokość tekstu */
+
+  width: auto; /* Pozwalamy szerokości dopasować się proporcjonalnie */
+  object-fit: contain; /* Zmieniamy na contain, aby cały obrazek był widoczny */
+  border-radius: 16px;
 }
-.logo-grupy {
-  margin-top: 40px;
+
+/* Jednolity, pozycjonowany styl dla podpisu pod kafelkiem */
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px 4px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: #1a221c;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(2px);
 }
 </style>

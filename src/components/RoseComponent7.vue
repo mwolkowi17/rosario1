@@ -450,12 +450,13 @@
       />
       <p class="font-load">txt</p>
       <Mysterio v-if="storeRose.ifMysterio()" />
-      <!-- <PadreNuestro v-if="storeRose.ifPadre()" /> -->
+
       <PadreNuesrtoShort v-if="storeRose.ifPadre()" />
-      <!-- <AveMaria v-if="storeRose.ifAve()" /> -->
+
       <AveMariaShort v-if="storeRose.ifAve()" />
-      <!-- <Gloria v-if="storeRose.ifGloria()" /> -->
+
       <GloriaShort v-if="storeRose.ifGloria()" />
+      <EndScreen v-if="storeRose.ifEnd()" />
 
       <img
         class="button-back-img"
@@ -477,6 +478,7 @@ import PadreNuesrtoShort from "./PadreNuesrtoShort.vue";
 import AveMariaShort from "./AveMariaShort.vue";
 import GloriaShort from "./GloriaShort.vue";
 import Mysterio from "./Mysterio.vue";
+import EndScreen from "./EndScreen.vue";
 // 1. Importowanie obrazków przez Vite, aby uzyskać ich finalne adresy URL
 import img1 from "../assets/rozaniec2_1.png";
 import img2 from "../assets/rozaniec2_2.png";

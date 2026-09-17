@@ -169,6 +169,10 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     }
   }
 
+  function ifEnd() {
+    if (counter.value > 70) return true;
+  }
+
   return {
     counter,
     rosDict,
@@ -180,6 +184,7 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     ifAve,
     ifGloria,
     ifMysterio,
+    ifEnd,
     nrOfMysterio,
   };
 });
