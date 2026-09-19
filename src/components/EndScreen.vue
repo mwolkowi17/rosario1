@@ -37,6 +37,7 @@
   font-size: 44px;
   text-align: center;
   font-weight: bold;
+  margin-top: 60px;
 }
 .main-text {
   color: #000000;

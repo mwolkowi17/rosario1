@@ -4,6 +4,7 @@ import HomePage from "../views/HomePage.vue";
 import RosarioPage from "@/views/RosarioPage.vue";
 import AboutRosarioPage from "@/views/AboutRosarioPage.vue";
 import Mysterios from "@/views/Mysterios.vue";
+import OAplikacji from "@/views/OAplikacji.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -29,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/mysterios",
     name: "Mysterios",
     component: Mysterios,
+  },
+  {
+    path: "/o_aplikacji",
+    name: "OAplikacji",
+    component: OAplikacji,
   },
 ];
 

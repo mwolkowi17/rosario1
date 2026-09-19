@@ -108,7 +108,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import {
-  IonButton,
   IonBackButton,
   IonButtons,
   IonContent,
@@ -116,63 +115,11 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonSpinner,
-  IonMenu,
-  IonMenuButton,
-  menuController,
 } from "@ionic/vue";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-
-async function goToHome() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/home");
-}
-
-async function goToTimer() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/timer");
-}
-
-async function goToCzytanie() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("./czytanie");
-}
-
-async function goToUstawienia() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("./settings");
-}
-
-async function goToManual() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("./manual");
-}
-
-async function goToKonferencje() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/konferencje");
-}
-
-async function goToGrupy() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/grupy");
-}
-
-async function goToKalendarium() {
-  Haptics.impact({ style: ImpactStyle.Light });
-  menuController.close();
-  router.push("/kalendarium");
-}
 </script>
 
 <style scoped>
@@ -186,7 +133,7 @@ async function goToKalendarium() {
   padding-right: 16px;
   padding-bottom: env(safe-area-inset-bottom);
   /* margin-right: 10px; */
-  background-color: #f4eee2;
+  background-color: #e2e5d8;
   color: #000000;
 }
 .loading-spinner {

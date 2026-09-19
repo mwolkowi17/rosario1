@@ -19,6 +19,9 @@
         <div class="menu-item ion-padding menu-blok" @click="goToORozancu">
           <span class="menu-napis">O Różańcu</span>
         </div>
+        <div class="menu-item ion-padding menu-blok" @click="goToOAplikacji">
+          <span class="menu-napis">Informacje o Aplikacji</span>
+        </div>
       </ion-content>
     </ion-menu>
 
@@ -120,6 +123,12 @@ async function goToORozancu() {
   Haptics.impact({ style: ImpactStyle.Light });
   menuController.close();
   router.push("/about_rosario");
+}
+
+async function goToOAplikacji() {
+  Haptics.impact({ style: ImpactStyle.Light });
+  menuController.close();
+  router.push("/o_aplikacji");
 }
 </script>
 
