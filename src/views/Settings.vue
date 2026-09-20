@@ -6,30 +6,18 @@
           <ion-back-button default-href="/home"></ion-back-button>
           <!-- <ion-button @click="goBack">Back</ion-button> -->
         </ion-buttons>
-        <ion-title>O Aplikacji</ion-title>
+        <ion-title>Ustawienia</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true" id="jak-content">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">O Aplikacji</ion-title>
+          <ion-title size="large">Ustawienia</ion-title>
         </ion-toolbar>
       </ion-header>
       <div class="main-container">
-        <h1>Informacje</h1>
-        <p>
-          "Różaniec na codzień" powstał jako prosta aplikacja będąca pomocą w
-          odmawianiu modlitwy różańcowej. Czasami nie jest możliwe używanie
-          tradycyjnego różańca, i naprzeciw takiej sytuacji wychodzi niniejsza
-          aplikacja. Na ekranie przedstawiającym różaniec, użytkownik porusza
-          się za pomocą dwóch zielonych klawiszy ze strzałkami. Tajemnice
-          różańca wyświetlają się automatycznie zgdonie z dniem tygodnia, według
-          przyjętego porządku (poniedziałek, sobota - Tajemnice Radosne; wtorek,
-          piątek - Tajemnice Bolesne; środa, niedziala - Tajemnice Chwalebne;
-          czwartek - Tajemnice Światła). Początek każdej tajemnicy zaznaczas
-          sygnał gongu, który można wyłączyć w Ustawieniach.
-        </p>
+        <h1>Ustawienia</h1>
       </div>
     </ion-content>
   </ion-page>

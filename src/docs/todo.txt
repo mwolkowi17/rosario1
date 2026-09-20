@@ -1,0 +1,5 @@
+na 20.09
+1. Ikony
+2. Dźwięk gongu na każdej tajemnicy
+3. Strona o aplikacji z opisem idei i instrukcją
+4. Ewentualnie ustawienia

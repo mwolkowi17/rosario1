@@ -22,6 +22,9 @@
         <div class="menu-item ion-padding menu-blok" @click="goToOAplikacji">
           <span class="menu-napis">Informacje o Aplikacji</span>
         </div>
+        <div class="menu-item ion-padding menu-blok" @click="goToSettings">
+          <span class="menu-napis">Ustawienia</span>
+        </div>
       </ion-content>
     </ion-menu>
 
@@ -129,6 +132,12 @@ async function goToOAplikacji() {
   Haptics.impact({ style: ImpactStyle.Light });
   menuController.close();
   router.push("/o_aplikacji");
+}
+
+async function goToSettings() {
+  Haptics.impact({ style: ImpactStyle.Light });
+  menuController.close();
+  router.push("/settings");
 }
 </script>
 

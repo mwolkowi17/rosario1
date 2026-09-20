@@ -5,6 +5,7 @@ import RosarioPage from "@/views/RosarioPage.vue";
 import AboutRosarioPage from "@/views/AboutRosarioPage.vue";
 import Mysterios from "@/views/Mysterios.vue";
 import OAplikacji from "@/views/OAplikacji.vue";
+import Settings from "@/views/Settings.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,6 +36,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/o_aplikacji",
     name: "OAplikacji",
     component: OAplikacji,
+  },
+  {
+    path: "/settings",
+    name: "Setitngs",
+    component: Settings,
   },
 ];
 
