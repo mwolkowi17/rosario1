@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { f } from "vue-router/dist/router-CWoNjPRp.mjs";
-import { nextTick, ref } from "vue";
+import { nextTick, ref, computed } from "vue";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 
 export const useRosaStore = defineStore("rosarioStore", () => {
@@ -100,6 +100,18 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     rosColection.value[counter.value] = true;
     counter.value++;
     console.log(counter.value);
+    //gong
+    if (counter.value === 6) {
+      sound_gong.value.play();
+    } else if (counter.value === 19) {
+      sound_gong.value.play();
+    } else if (counter.value === 32) {
+      sound_gong.value.play();
+    } else if (counter.value === 45) {
+      sound_gong.value.play();
+    } else if (counter.value === 58) {
+      sound_gong.value.play();
+    }
   }
 
   async function previous() {
@@ -172,6 +184,18 @@ export const useRosaStore = defineStore("rosarioStore", () => {
   function ifEnd() {
     if (counter.value > 70) return true;
   }
+
+  //gong pojedynczy
+  const sound_gong = computed(() => {
+    const sound = new Audio(
+      new URL("../assets/fanfary.mp3", import.meta.url).href,
+    );
+    return sound;
+  });
+
+  sound_gong.value.playbackRate = 2;
+  sound_gong.value.preload = "auto";
+  sound_gong.value.volume = 0.2;
 
   return {
     counter,
