@@ -24,8 +24,8 @@
             <span>O</span>
 
             <ion-toggle
-              @ionChange="toggleTest"
-              :checked="ifGongPlay"
+              @ionChange="toggleSoundOn"
+              :checked="storeRose.ifGongPlay"
             ></ion-toggle>
 
             <span>I</span>
@@ -33,7 +33,11 @@
         </div>
         <div class="small-container">
           <div>
-            <ion-range class="volume-level">
+            <ion-range
+              class="volume-level"
+              :value="storeRose.sound_gong.volume / 0.01"
+              @ionChange="onIonChangeVolumeGong"
+            >
               <div slot="label">Głośność gongu</div>
             </ion-range>
           </div>
@@ -41,8 +45,8 @@
         <div class="small-container">
           <ion-select
             label="Wielkość czcionki"
-            label-placement="floating"
             fill="outline"
+            v-model="selectedFontSize"
             @ionChange="handleChange($event)"
             @ionCancel="handleCancel()"
             @ionDismiss="handleDismiss()"
@@ -81,10 +85,14 @@ import { useRosaStore } from "@/stores/rosaStore";
 const storeRose = useRosaStore();
 const router = useRouter();
 
+const savedFontSize = localStorage.getItem("user-font-size");
+const selectedFontSize = ref(savedFontSize ? parseFloat(savedFontSize) : 1.0);
+
 const handleChange = (event: CustomEvent<{ value: any }>): void => {
   console.log("ionChange fired with value: " + event.detail.value);
   applyFontSize(event.detail.value);
   localStorage.setItem("user-font-size", event.detail.value.toString());
+  selectedFontSize.value = event.detail.value;
 };
 
 const handleCancel = () => {
@@ -100,18 +108,22 @@ const applyFontSize = (size: number) => {
   document.documentElement.style.fontSize = `${size * 100}%`;
 };
 
-const ifGongPlay = ref(true);
-
-const toggleTest = () => {
-  if (ifGongPlay.value) {
+const toggleSoundOn = () => {
+  if (storeRose.ifGongPlay) {
     storeRose.muteGong();
-    ifGongPlay.value = false;
+    storeRose.ifGongPlay = false;
     console.log("muteGong");
-  } else if (!ifGongPlay.value) {
+  } else if (!storeRose.ifGongPlay) {
     storeRose.playGong();
-    ifGongPlay.value = true;
+    storeRose.ifGongPlay = true;
     console.log("playGong");
   }
+};
+
+const onIonChangeVolumeGong = ({ detail }: { detail: { value: any } }) => {
+  console.log("ionChange emitted value: " + detail.value);
+
+  storeRose.sound_gong.volume = 0.01 * detail.value;
 };
 </script>
 

@@ -42,19 +42,34 @@
         <ion-grid class="full-grid">
           <ion-row class="my-row">
             <ion-col class="timer-block custom-card" @click="goToRosario">
-              <img class="card-icon" src="../assets/rosario1.png" />
+              <img
+                class="card-icon"
+                src="../assets/rosario1.png"
+                loading="eager"
+                fetchpriority="high"
+              />
               <h6 class="card-label">Różaniec</h6>
             </ion-col>
           </ion-row>
           <ion-row class="my-row">
             <ion-col class="czytanie-block custom-card" @click="goToTajemnice">
-              <img class="card-icon" src="../assets/mysterios1.png" />
+              <img
+                class="card-icon"
+                src="../assets/mysterios1.png"
+                loading="eager"
+                fetchpriority="high"
+              />
               <h6 class="card-label">Tajemnice Różańca</h6>
             </ion-col>
           </ion-row>
           <ion-row class="my-row">
             <ion-col class="grupy-block custom-card" @click="goToORozancu">
-              <img class="card-icon" src="../assets/o_modlitwie2.png" />
+              <img
+                class="card-icon"
+                src="../assets/o_modlitwie2.png"
+                loading="eager"
+                fetchpriority="high"
+              />
               <h6 class="card-label">O Różańcu</h6>
             </ion-col>
           </ion-row>
@@ -84,17 +99,17 @@ import {
 } from "@ionic/vue";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 
-onIonViewWillEnter(() => {
-  document.documentElement.style.fontSize = "100%";
-});
+// onIonViewWillEnter(() => {
+//   document.documentElement.style.fontSize = "100%";
+// });
 
-onIonViewWillLeave(() => {
-  const savedSize = localStorage.getItem("user-font-size");
-  if (savedSize) {
-    const size = parseFloat(savedSize);
-    document.documentElement.style.fontSize = `${size * 100}%`;
-  }
-});
+// onIonViewWillLeave(() => {
+//   const savedSize = localStorage.getItem("user-font-size");
+//   if (savedSize) {
+//     const size = parseFloat(savedSize);
+//     document.documentElement.style.fontSize = `${size * 100}%`;
+//   }
+// });
 
 const router = useRouter();
 
@@ -195,8 +210,8 @@ ion-content.ion-no-scroll {
 
 .card-icon {
   margin-top: 10px; /* Dostosuj tę wartość, aby podnieść/opuścić obrazek */
-  max-height: calc(100% - 40px); /* 100% minus szacowana wysokość tekstu */
-
+  max-height: calc(100% - 40px); /*100% minus szacowana wysokość tekstu */
+  /* height: 65%; */
   width: auto; /* Pozwalamy szerokości dopasować się proporcjonalnie */
   object-fit: contain; /* Zmieniamy na contain, aby cały obrazek był widoczny */
   border-radius: 16px;

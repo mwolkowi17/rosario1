@@ -197,6 +197,8 @@ export const useRosaStore = defineStore("rosarioStore", () => {
   sound_gong.value.preload = "auto";
   sound_gong.value.volume = 0.2;
 
+  const ifGongPlay = ref(true);
+
   function muteGong() {
     sound_gong.value.volume = 0;
   }
@@ -209,6 +211,8 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     counter,
     rosDict,
     rosColection,
+    ifGongPlay,
+    sound_gong,
     next,
     previous,
     reset,
