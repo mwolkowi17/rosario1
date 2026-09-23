@@ -197,6 +197,14 @@ export const useRosaStore = defineStore("rosarioStore", () => {
   sound_gong.value.preload = "auto";
   sound_gong.value.volume = 0.2;
 
+  function muteGong() {
+    sound_gong.value.volume = 0;
+  }
+
+  function playGong() {
+    sound_gong.value.volume = 0.2;
+  }
+
   return {
     counter,
     rosDict,
@@ -210,5 +218,7 @@ export const useRosaStore = defineStore("rosarioStore", () => {
     ifMysterio,
     ifEnd,
     nrOfMysterio,
+    muteGong,
+    playGong,
   };
 });

@@ -3,3 +3,12 @@ na 20.09
 2. Dźwięk gongu na każdej tajemnicy
 3. Strona o aplikacji z opisem idei i instrukcją
 4. Ewentualnie ustawienia
+
+na 22.09
+1. grafiki na stronach informacyjnych
+2. ustawienia
+a) wyłaczanie gongu
+b) głosnosc gongu
+c) wielkosc liter
+d) wersja
+3. poprawic kafelki
