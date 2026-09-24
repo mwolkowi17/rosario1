@@ -27,9 +27,14 @@
           różańca wyświetlają się automatycznie zgdonie z dniem tygodnia, według
           przyjętego porządku (poniedziałek, sobota - Tajemnice Radosne; wtorek,
           piątek - Tajemnice Bolesne; środa, niedziala - Tajemnice Chwalebne;
-          czwartek - Tajemnice Światła). Początek każdej tajemnicy zaznaczas
+          czwartek - Tajemnice Światła). Początek każdej tajemnicy podkreśla
           sygnał gongu, który można wyłączyć w Ustawieniach.
         </p>
+        <h2 class="cross">&#9769</h2>
+        <div class="app-info">
+        <h5>Projekt i wykonianie aplikacji:</h5>
+        <h5><a href="https://web-workshop.eu/">web-workshop.eu</a></h5>
+        </div>
       </div>
     </ion-content>
   </ion-page>
@@ -68,5 +73,14 @@ const router = useRouter();
 .loading-spinner {
   display: flex;
   justify-content: center;
+}
+.cross{
+ display: flex;
+justify-content: center;
+}
+.app-info{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 </style>

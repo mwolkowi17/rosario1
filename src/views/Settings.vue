@@ -151,7 +151,7 @@ const onIonChangeVolumeGong = ({ detail }: { detail: { value: any } }) => {
   padding-left: 16px;
   padding-right: 16px;
   /* margin-right: 10px; */
-  background-color: #f4eee2;
+  background-color: #e2e5d8;
   color: #000000;
 }
 
@@ -166,7 +166,7 @@ const onIonChangeVolumeGong = ({ detail }: { detail: { value: any } }) => {
 .volume-level {
   flex: 0 0 auto;
   height: 48px !important;
-  margin-top: -10px;
+  /* margin-top: -10px; */
 }
 
 .gong-toggle {
