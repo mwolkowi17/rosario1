@@ -44,7 +44,7 @@
             <ion-col class="timer-block custom-card" @click="goToRosario">
               <img
                 class="card-icon"
-                src="../assets/rosario1.png"
+                src="../assets/rosario1b.png"
                 loading="eager"
                 fetchpriority="high"
               />
@@ -66,7 +66,7 @@
             <ion-col class="grupy-block custom-card" @click="goToORozancu">
               <img
                 class="card-icon"
-                src="../assets/o_modlitwie2.png"
+                src="../assets/o_modlitwie2b.png"
                 loading="eager"
                 fetchpriority="high"
               />

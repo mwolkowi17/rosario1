@@ -12,3 +12,7 @@ b) głosnosc gongu
 c) wielkosc liter
 d) wersja
 3. poprawic kafelki
+
+na 25.09
+1.Poprawić grafiki
+2.Przejrzeć całość

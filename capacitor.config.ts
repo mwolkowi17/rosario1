@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "io.ionic.starter",
-  appName: "rosa_ionic_1",
+  appId: "io.ionic.rosario1",
+  appName: "rosa_ionic1",
   webDir: "dist",
   plugins: {
     SplashScreen: {
