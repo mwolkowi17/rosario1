@@ -32,6 +32,37 @@ import { useRosaStore } from "@/stores/rosaStore";
 import RoseComponent7 from "@/components/RoseComponent7.vue";
 
 const storeRose = useRosaStore();
+
+let wakeLock: any = null;
+
+const onVisibilityChange = async () => {
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    console.log("Blokada ekranu została aktywowana.");
+  } catch (err: any) {
+    console.error(`${err.name}, nie można aktywować blokady: ${err.message}`);
+  }
+};
+
+onMounted(async () => {
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    console.log("Blokada ekranu została aktywowana.");
+  } catch (err: any) {
+    console.error(`${err.name}, nie można aktywować blokady: ${err.message}`);
+  }
+  document.addEventListener("visibilitychange", onVisibilityChange);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("visibilitychange", onVisibilityChange);
+
+  if (wakeLock) {
+    wakeLock.release().then(() => {
+      wakeLock = null;
+    });
+  }
+});
 </script>
 
 <style scoped>

@@ -16,3 +16,6 @@ d) wersja
 na 25.09
 1.Poprawić grafiki
 2.Przejrzeć całość
+
+na 29.09
+1. zrobić żeby się nie wygaszała na odmawianiu różańca
